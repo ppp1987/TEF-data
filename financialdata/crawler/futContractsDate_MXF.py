@@ -65,10 +65,10 @@ def crawler_futures(date: str, prod:str='MXF') -> pd.DataFrame:
         if Soup.find(class_='table_f') != None:
             table_f = Soup.find(class_='table_f')
             all_contracts = table_f("tr")[-1]
-            insitutional_buy = all_contracts("td")[-4].text
+            insitutional_buy = all_contracts("td")[-6].text
             insitutional_buy = int(re.sub(r"\r|\n|\t|,| ", "", insitutional_buy))
 
-            insitutional_sell  = all_contracts("td")[-6].text
+            insitutional_sell  = all_contracts("td")[-4].text
             insitutional_sell = int(re.sub(r"\r|\n|\t|,| ", "", insitutional_sell))
             
             datetime_now = datetime.now().isoformat(sep=" ", timespec="seconds")
