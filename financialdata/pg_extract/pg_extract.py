@@ -17,7 +17,7 @@ def main(table_name):
     cur = conn.cursor()
     print('Connecting to Database')
     sql = f"COPY {table_name} TO STDOUT WITH DELIMITER ',' CSV HEADER;"
-    with open(f"{os.getcwd()}/data/{table_name}.csv", "w") as file:
+    with open(f"{os.getcwd()}/financialdata/pg_extract/data/{table_name}.csv", "w") as file:
         cur.copy_expert(sql, file)
         cur.close()
     print('CSV File has been created')

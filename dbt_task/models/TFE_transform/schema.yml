@@ -1,0 +1,27 @@
+
+version: 2
+
+models:
+  - name: small_insitutional
+    description: "小外資淨部位"
+    columns:
+      - name: date
+        description: "日期"
+        tests:
+          - unique
+          - not_null
+    columns:
+      - name: small_insitutional
+        description: "小外資淨部位"
+        tests:
+          # - unique
+          - not_null
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null

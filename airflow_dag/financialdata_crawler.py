@@ -6,7 +6,7 @@ from airflow.operators.bash_operator import BashOperator
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.models import Variable
 
-APP_USER = Variable.get('APP_USER')
+APP_USER = 'ppp1987525'
 
 default_args = {
     'owner': 'chengche',
